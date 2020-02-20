@@ -1,6 +1,8 @@
 package com.thoughtworks.collection;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Random;
 
 public class Practice1 {
     public static void main(String[] args) {
@@ -8,9 +10,14 @@ public class Practice1 {
     }
 
     /**
-     *  生成10个0到20的随机整数，要求不能重复
+     * 生成10个0到20的随机整数，要求不能重复
      */
     public static Collection<Integer> randomNumber() {
-        return null;
+        Collection<Integer> randoms = new HashSet<>();
+        Random random = new Random();
+        while (randoms.size() < 10) {
+            randoms.add(random.nextInt(21));
+        }
+        return randoms;
     }
 }
